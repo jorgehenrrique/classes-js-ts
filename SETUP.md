@@ -4,7 +4,7 @@ Este guia ajudará você a configurar seu ambiente para executar os exemplos da 
 
 ## Requisitos do Sistema
 
-- Node.js (versão 18 ou superior)
+- Node.js (versão 18.0.0 ou superior)
 - npm (versão 8 ou superior)
 - Git
 - Editor de código (recomendamos VS Code)

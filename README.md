@@ -1,5 +1,7 @@
 # Classes em JavaScript e TypeScript
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Este repositório contém uma apostila completa sobre Classes em JavaScript e TypeScript, desde conceitos básicos até padrões de projeto avançados. O material foi desenvolvido para ser claro, conciso e acessível tanto para iniciantes quanto para desenvolvedores experientes.
 
 ## Sobre o Material
