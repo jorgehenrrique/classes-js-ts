@@ -1,0 +1,59 @@
+{
+  "name": "classes-js-ts",
+  "version": "1.0.0",
+  "description": "Apostila completa sobre Classes em JavaScript e TypeScript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "build": "tsup src/index.ts",
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "classes",
+    "oop",
+    "tutorial"
+  ],
+  "author": {
+    "name": "Jorge Henrique",
+    "url": "https://github.com/jorgehenrrique"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jorgehenrrique/classes-js-ts.git"
+  },
+  "engines": {
+    "node": ">= 18.0.0",
+    "npm": ">= 8.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.17.0",
+    "prettier": "^3.1.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0",
+    "vitest": "^2.1.8"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "esm"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  }
+}
