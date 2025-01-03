@@ -1,6 +1,6 @@
 # Configuração do Ambiente de Desenvolvimento
 
-Este guia ajudará você a configurar seu ambiente para executar os exemplos da apostila.
+Este guia ajudará você a configurar seu ambiente para executar os exemplos e exercícios da apostila.
 
 ## Requisitos do Sistema
 
@@ -53,18 +53,29 @@ sudo apt-get install -y nodejs
    npm install
    ```
 
-3. Estrutura de pastas recomendada:
+3. Estrutura do Projeto:
    ```
    projeto/
    ├── src/
-   │   ├── exemplos/
-   │   │   ├── basicos/
-   │   │   ├── avancados/
-   │   │   └── padroes/
-   │   └── exercicios/
+   │   ├── exercicios/
+   │   │   ├── 01-sistema-bancario/
+   │   │   │   └── index.ts
+   │   │   ├── 02-sistema-biblioteca/
+   │   │   │   └── index.ts
+   │   │   ├── 03-sistema-loja/
+   │   │   │   └── index.ts
+   │   │   └── 04-padroes-projeto/
+   │   │       └── index.ts
+   │   └── exemplos/
+   │       ├── 01-conceitos-basicos/
+   │       ├── 02-recursos-avancados/
+   │       ├── 03-padroes-projeto/
+   │       └── 04-exemplos-praticos/
    ├── tests/
+   │   ├── exercicios/
+   │   └── exemplos/
    ├── package.json
-   └── tsconfig.json
+   └── README.md
    ```
 
 ### 3. Configuração do Editor (VS Code)
@@ -96,66 +107,64 @@ sudo apt-get install -y nodejs
 
 No diretório do projeto, você pode executar:
 
-### `npm run dev`
-
-Inicia o servidor de desenvolvimento com hot-reload usando tsx.
+### Exercícios
 
 ```bash
-npm run dev
+# Exercício 1: Sistema Bancário
+npm run dev:exercicio1
+
+# Exercício 2: Sistema de Biblioteca
+npm run dev:exercicio2
+
+# Exercício 3: Sistema de Loja Online
+npm run dev:exercicio3
+
+# Exercício 4: Padrões de Projeto
+npm run dev:exercicio4
 ```
 
-### `npm run build`
-
-Compila o projeto usando tsup.
+### Exemplos
 
 ```bash
-npm run build
+# Exemplo 1: Conceitos Básicos
+npm run dev:exemplo1
+
+# Exemplo 2: Recursos Avançados
+npm run dev:exemplo2
+
+# Exemplo 3: Padrões de Projeto
+npm run dev:exemplo3
+
+# Exemplo 4: Exemplos Práticos
+npm run dev:exemplo4
 ```
 
-### `npm start`
-
-Executa a versão compilada do projeto.
+### Testes
 
 ```bash
-npm start
-```
-
-### `npm test`
-
-Executa os testes usando Vitest.
-
-```bash
+# Executar testes
 npm test
-```
 
-### `npm run coverage`
-
-Executa os testes com cobertura.
-
-```bash
+# Executar testes com cobertura
 npm run coverage
 ```
 
-## Executando os Exemplos
-
-### TypeScript (Desenvolvimento)
+### Outros Scripts
 
 ```bash
-npm run dev
+# Verificar problemas de código
+npm run lint
+
+# Formatar código
+npm run format
 ```
 
-### TypeScript (Produção)
+## Executando os Exercícios
 
-```bash
-npm run build
-npm start
-```
-
-### Executando Arquivos Individuais
-
-```bash
-npx tsx src/exemplos/arquivo.ts
-```
+1. Navegue até o arquivo do exercício em `src/exercicios/`
+2. Implemente as classes e interfaces solicitadas
+3. Execute o script correspondente (ex: `npm run dev:exercicio1`)
+4. O arquivo será executado em modo watch, atualizando automaticamente quando você salvar
 
 ## Dicas de Desenvolvimento
 
@@ -205,6 +214,5 @@ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslin
 - [Documentação do TypeScript](https://www.typescriptlang.org/docs)
 - [Documentação do TSX](https://github.com/esbuild-kit/tsx)
 - [Documentação do Vitest](https://vitest.dev)
-- [Documentação do TSUP](https://tsup.egoist.dev)
 - [Node.js Docs](https://nodejs.org/docs)
 - [VS Code Docs](https://code.visualstudio.com/docs)
