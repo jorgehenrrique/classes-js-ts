@@ -8,7 +8,7 @@
     "coverage": "vitest run --coverage",
     "dev:exercicio1": "tsx watch src/exercicios/01-sistema-bancario/index.ts",
     "dev:exercicio2": "tsx watch src/exercicios/02-sistema-biblioteca/index.ts",
-    "dev:exercicio3": "tsx watch src/exercicios/03-sistema-loja/index.ts",
+    "dev:exercicio3": "tsx watch src/exercicios/03-loja-online/index.ts",
     "dev:exercicio4": "tsx watch src/exercicios/04-padroes-projeto/index.ts",
     "dev:exemplo1": "tsx watch src/exemplos/01-conceitos-basicos/index.ts",
     "dev:exemplo2": "tsx watch src/exemplos/02-recursos-avancados/index.ts",
@@ -46,6 +46,6 @@
     "prettier": "^3.1.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
-    "vitest": "^1.1.3"
+    "vitest": "^2.1.8"
   }
 }

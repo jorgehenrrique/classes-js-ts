@@ -1,5 +1,11 @@
 # Recursos Avançados de Classes
 
+> Referências:
+>
+> - [TypeScript Handbook - Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html)
+> - [TypeScript Handbook - Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html)
+> - [MDN Web Docs - Herança](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+
 ## Herança
 
 A herança permite que uma classe herde propriedades e métodos de outra classe.
@@ -108,7 +114,10 @@ abstract class Forma {
 }
 
 class Retangulo extends Forma {
-  constructor(private largura: number, private altura: number) {
+  constructor(
+    private largura: number,
+    private altura: number
+  ) {
     super();
   }
 
@@ -131,7 +140,10 @@ interface Veiculo {
 }
 
 class Carro implements Veiculo {
-  constructor(public marca: string, public modelo: string) {}
+  constructor(
+    public marca: string,
+    public modelo: string
+  ) {}
 
   acelerar(): void {
     console.log('Carro acelerando...');

@@ -1,5 +1,10 @@
 # Conceitos Básicos de Classes
 
+> Referências:
+>
+> - [MDN Web Docs - Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+> - [TypeScript Handbook - Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html)
+
 ## Glossário de Termos
 
 Antes de começar, vamos entender alguns termos importantes:

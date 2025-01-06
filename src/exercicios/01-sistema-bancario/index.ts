@@ -1,21 +1,28 @@
-// Exercício 1: Sistema Bancário
-// Implemente suas classes aqui
+// Sistema Bancário - Exercício
+// Implemente as classes necessárias para um sistema bancário básico
 
-class Cliente {
-  // Implementar
+// TODO: Implemente a classe Cliente
+class ClienteBanco {
+  // Propriedades: nome, cpf, email
+  // Métodos: construtor, getters/setters necessários
 }
 
-class ContaBancaria {
-  // Implementar
+// TODO: Implemente a classe ContaBancaria
+class ContaBancariaBanco {
+  // Propriedades: número da conta, saldo, cliente (tipo ClienteBanco)
+  // Métodos: depositar, sacar, consultarSaldo
 }
 
-class Banco {
-  // Implementar
+// TODO: Implemente a classe Banco
+class BancoExercicio {
+  // Propriedades: nome, lista de contas
+  // Métodos: criarConta, buscarConta, listarContas
 }
 
-// Exemplo de uso:
+// Função principal para testar a implementação
 function executarSistemaBancario() {
-  // Seu código aqui
+  // TODO: Crie instâncias das classes e teste as funcionalidades
+  console.log('Sistema Bancário - Exercício');
 }
 
 executarSistemaBancario();

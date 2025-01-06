@@ -1,32 +1,43 @@
-// Exercício 4: Padrões de Projeto
-// Implemente suas interfaces e classes aqui
+// Padrões de Projeto - Exercício
+// Implemente os seguintes padrões de projeto
 
-// 1. Singleton
-class ConfigManager {
-  // Implementar Singleton
+// TODO: Implemente o padrão Singleton
+class ConfiguracaoSingleton {
+  // Implemente um singleton para gerenciar configurações da aplicação
+  // Deve permitir get/set de configurações
 }
 
-// 2. Factory
-interface Documento {
-  // Implementar interface
+// TODO: Implemente o padrão Factory
+interface ProdutoFactory {
+  // Defina a interface para criação de produtos
 }
 
-class DocumentoFactory {
-  // Implementar Factory
+class ProdutoFactoryExercicio {
+  // Implemente o factory method para criar diferentes tipos de produtos
 }
 
-// 3. Observer
-interface Observer {
-  // Implementar interface
+// TODO: Implemente o padrão Observer
+interface ObserverExercicio {
+  // Defina a interface para observadores
 }
 
-class Subject {
-  // Implementar Subject
+class SubjectExercicio {
+  // Implemente o subject que notificará os observadores
 }
 
-// Exemplo de uso:
-function executarPadroesProjeto() {
-  // Seu código aqui
+// TODO: Implemente o padrão Strategy
+interface PagamentoStrategy {
+  // Defina a interface para diferentes estratégias de pagamento
 }
 
-executarPadroesProjeto();
+class ProcessadorPagamento {
+  // Implemente o processador que utilizará diferentes estratégias
+}
+
+// Função principal para testar a implementação
+function executarPadroesProjetoExercicio() {
+  // TODO: Crie instâncias e teste os padrões implementados
+  console.log('Padrões de Projeto - Exercício');
+}
+
+executarPadroesProjetoExercicio();

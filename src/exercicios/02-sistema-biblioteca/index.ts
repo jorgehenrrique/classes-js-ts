@@ -1,21 +1,28 @@
-// Exercício 2: Sistema de Biblioteca
-// Implemente suas classes aqui
+// Sistema de Biblioteca - Exercício
+// Implemente as classes necessárias para um sistema de biblioteca
 
-class Livro {
-  // Implementar
+// TODO: Implemente a classe Livro
+class LivroBiblioteca {
+  // Propriedades: título, autor, isbn, disponível
+  // Métodos: construtor, getters/setters necessários
 }
 
-class Usuario {
-  // Implementar
+// TODO: Implemente a classe Usuario
+class UsuarioBiblioteca {
+  // Propriedades: nome, id, livros emprestados
+  // Métodos: emprestarLivro, devolverLivro
 }
 
-class Biblioteca {
-  // Implementar
+// TODO: Implemente a classe Biblioteca
+class BibliotecaExercicio {
+  // Propriedades: nome, lista de livros, lista de usuários
+  // Métodos: cadastrarLivro, cadastrarUsuario, emprestarLivro, devolverLivro
 }
 
-// Exemplo de uso:
+// Função principal para testar a implementação
 function executarSistemaBiblioteca() {
-  // Seu código aqui
+  // TODO: Crie instâncias das classes e teste as funcionalidades
+  console.log('Sistema de Biblioteca - Exercício');
 }
 
 executarSistemaBiblioteca();

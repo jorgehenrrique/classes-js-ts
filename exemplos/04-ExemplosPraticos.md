@@ -1,5 +1,11 @@
 # Exemplos Práticos de Classes
 
+> Referências:
+>
+> - [TypeScript Documentation - Object Oriented Programming](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html)
+> - [MDN Web Docs - Working with Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
+> - [TypeScript Deep Dive - Classes](https://basarat.gitbook.io/typescript/future-javascript/classes)
+
 Este arquivo contém exemplos práticos de uso de classes em situações reais.
 
 ## 1. Sistema de E-commerce
@@ -31,7 +37,10 @@ class Produto {
 
 // Item do Carrinho
 class ItemCarrinho {
-  constructor(private produto: Produto, private quantidade: number) {}
+  constructor(
+    private produto: Produto,
+    private quantidade: number
+  ) {}
 
   public getTotal(): number {
     return this.produto.getPreco() * this.quantidade;
@@ -202,7 +211,10 @@ class EmailNotificacao implements Notificacao {
 }
 
 class SMSNotificacao implements Notificacao {
-  constructor(private telefone: string, private mensagem: string) {}
+  constructor(
+    private telefone: string,
+    private mensagem: string
+  ) {}
 
   enviar(): void {
     console.log(`Enviando SMS para ${this.telefone}`);

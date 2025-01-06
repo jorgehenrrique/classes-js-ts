@@ -1,5 +1,10 @@
 # Padrões de Projeto com Classes
 
+> Referências:
+>
+> - [Refactoring Guru - Design Patterns](https://refactoring.guru/design-patterns)
+> - [Design Patterns in TypeScript](https://github.com/torokmark/design_patterns_in_typescript)
+
 Os padrões de projeto são soluções típicas para problemas comuns no desenvolvimento de software.
 
 ## 1. Singleton
