@@ -62,15 +62,19 @@ sudo apt-get install -y nodejs
    │   │   │   └── index.ts
    │   │   ├── 02-sistema-biblioteca/
    │   │   │   └── index.ts
-   │   │   ├── 03-sistema-loja/
+   │   │   ├── 03-loja-online/
    │   │   │   └── index.ts
    │   │   └── 04-padroes-projeto/
    │   │       └── index.ts
    │   └── exemplos/
    │       ├── 01-conceitos-basicos/
+   │       │   └── index.ts
    │       ├── 02-recursos-avancados/
+   │       │   └── index.ts
    │       ├── 03-padroes-projeto/
+   │       │   └── index.ts
    │       └── 04-exemplos-praticos/
+   │           └── index.ts
    ├── tests/
    │   ├── exercicios/
    │   └── exemplos/
