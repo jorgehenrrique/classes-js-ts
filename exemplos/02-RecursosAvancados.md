@@ -224,7 +224,40 @@ class Produto {
       this._preco = valor;
     }
   }
+
+  // get para nome
+  get nome(): string {
+    return this._nome;
+  }
+
+  // set para nome com validação
+  set nome(valor: string) {
+    if (valor.length >= 3) {
+      this._nome = valor;
+    }
+  }
 }
+
+// Exemplo de uso:
+const notebook = new Produto('Notebook', 3500);
+
+// Usando getters (acessa como propriedade)
+console.log(notebook.nome); // Notebook
+console.log(notebook.preco); // R$ 3500.00
+
+// Usando setters (atribui como propriedade)
+notebook.preco = 3999.99; // Atualiza o preço
+console.log(notebook.preco); // R$ 3999.99
+
+notebook.nome = 'PC'; // Não atualiza (menos de 3 caracteres)
+console.log(notebook.nome); // Notebook
+
+notebook.nome = 'Computador'; // Atualiza o nome
+console.log(notebook.nome); // Computador
+
+// Tentando acessar propriedades privadas diretamente (erro)
+// console.log(notebook._nome);    // Erro: Property '_nome' is private
+// console.log(notebook._preco);   // Erro: Property '_preco' is private
 ```
 
 ## Métodos e Propriedades Estáticas
