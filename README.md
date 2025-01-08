@@ -25,14 +25,15 @@ Esta apostila foi criada com o objetivo de:
 
 2. [Recursos Avançados](exemplos/02-RecursosAvancados.md)
 
-   - Herança
-   - Encapsulamento
-   - Polimorfismo
-   - Interfaces (TypeScript)
    - Modificadores de Acesso
+   - Herança e uso do `super`
+   - Encapsulamento
    - Classes Abstratas
+   - Interfaces
+   - Polimorfismo
    - Getters e Setters
    - Métodos e Propriedades Estáticas
+   - Dicas de Uso
 
 3. [Padrões de Projeto](exemplos/03-PadroesDeProjetoComClasses.md)
 

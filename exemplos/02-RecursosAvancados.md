@@ -198,6 +198,134 @@ class Carro implements Veiculo {
 }
 ```
 
+## Polimorfismo
+
+O polimorfismo permite que objetos de diferentes classes sejam tratados como objetos de uma classe base comum. Existem dois tipos principais:
+
+1. Polimorfismo de Sobrescrita (Override): quando uma classe filha fornece uma implementação específica de um método que já está definido na classe pai.
+
+2. Polimorfismo de Sobrecarga (Overload): quando temos múltiplos métodos com o mesmo nome, mas com parâmetros diferentes.
+
+### Exemplo de Polimorfismo de Sobrescrita
+
+```typescript
+// Classe base
+abstract class Funcionario {
+  constructor(
+    protected nome: string,
+    protected salarioBase: number
+  ) {}
+
+  // Método que será sobrescrito
+  abstract calcularSalario(): number;
+
+  // Método comum a todos funcionários
+  apresentar(): string {
+    return `Funcionário: ${this.nome}`;
+  }
+}
+
+// Classes específicas
+class Desenvolvedor extends Funcionario {
+  constructor(
+    nome: string,
+    salarioBase: number,
+    private horasExtras: number
+  ) {
+    super(nome, salarioBase);
+  }
+
+  // Sobrescrita do método calcularSalario
+  calcularSalario(): number {
+    return this.salarioBase + this.horasExtras * 50;
+  }
+}
+
+class Vendedor extends Funcionario {
+  constructor(
+    nome: string,
+    salarioBase: number,
+    private comissao: number
+  ) {
+    super(nome, salarioBase);
+  }
+
+  // Sobrescrita do método calcularSalario
+  calcularSalario(): number {
+    return this.salarioBase + this.comissao;
+  }
+}
+
+// Exemplo de uso do polimorfismo
+function processarFolhaPagamento(funcionarios: Funcionario[]): void {
+  // Mesmo método calcularSalario() sendo chamado,
+  // mas cada classe tem sua própria implementação
+  funcionarios.forEach((funcionario) => {
+    console.log(funcionario.apresentar());
+    console.log(`Salário: R$ ${funcionario.calcularSalario()}`);
+  });
+}
+
+// Criando funcionários
+const dev = new Desenvolvedor('João', 5000, 10);
+const vendedor = new Vendedor('Maria', 3000, 1500);
+
+// Array de funcionários de diferentes tipos
+const funcionarios: Funcionario[] = [dev, vendedor];
+
+// Processando a folha
+processarFolhaPagamento(funcionarios);
+```
+
+### Exemplo de Polimorfismo de Sobrecarga
+
+```typescript
+class Calculadora {
+  // Sobrecarga de métodos
+  somar(a: number, b: number): number;
+  somar(a: number, b: number, c: number): number;
+  somar(a: string, b: string): string;
+
+  // Implementação que cobre todas as sobrecargas
+  somar(a: number | string, b: number | string, c?: number): number | string {
+    if (typeof a === 'string' && typeof b === 'string') {
+      return a.concat(b);
+    }
+
+    if (typeof a === 'number' && typeof b === 'number') {
+      if (c !== undefined) {
+        return a + b + c;
+      }
+      return a + b;
+    }
+
+    throw new Error('Tipos inválidos');
+  }
+}
+
+// Exemplo de uso
+const calc = new Calculadora();
+
+console.log(calc.somar(1, 2)); // 3
+console.log(calc.somar(1, 2, 3)); // 6
+console.log(calc.somar('Olá, ', 'Mundo!')); // Olá, Mundo!
+```
+
+O polimorfismo é uma das características mais poderosas da programação orientada a objetos porque:
+
+1. Permite tratar objetos diferentes de maneira uniforme
+2. Facilita a extensão do código sem modificar o código existente
+3. Torna o código mais flexível e reutilizável
+4. Permite que novas classes sejam adicionadas sem mudar o código que as utiliza
+
+### Dicas para uso do Polimorfismo
+
+1. Use classes abstratas e interfaces para definir contratos comuns
+2. Mantenha as assinaturas dos métodos consistentes nas classes filhas
+3. Evite verificações de tipo (type checking) quando possível
+4. Use o polimorfismo para eliminar condicionais complexas
+5. Prefira composição sobre herança quando o polimorfismo não for necessário
+
 ## Getters e Setters
 
 Permitem controlar o acesso às propriedades com lógica personalizada.
