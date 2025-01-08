@@ -280,8 +280,48 @@ console.log(Matematica.calcularCircunferencia(5)); // 31.4159
 
 ## Dicas de Uso
 
-1. Use herança apenas quando houver uma relação "é um"
-2. Prefira composição sobre herança para relações "tem um"
+1. Use herança (`extends`) quando existe uma relação "é um":
+
+   ```typescript
+   // Correto: Um Gato É UM Animal
+   class Animal {
+     protected nome: string;
+     constructor(nome: string) {
+       this.nome = nome;
+     }
+   }
+
+   class Gato extends Animal {
+     miar(): void {
+       console.log(`${this.nome} faz miau!`);
+     }
+   }
+   ```
+
+2. Use composição quando existe uma relação "tem um":
+
+   ```typescript
+   // Correto: Um Carro TEM UM Motor (não é um motor)
+   class Motor {
+     ligar(): void {
+       console.log('Motor ligado');
+     }
+   }
+
+   class Carro {
+     // Composição: Carro tem um Motor
+     private motor: Motor;
+
+     constructor() {
+       this.motor = new Motor();
+     }
+
+     ligar(): void {
+       this.motor.ligar();
+     }
+   }
+   ```
+
 3. Use `private` para esconder detalhes de implementação
 4. Use `protected` quando classes filhas precisam acessar
 5. Use `readonly` para propriedades que não devem mudar
