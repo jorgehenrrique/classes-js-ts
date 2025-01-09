@@ -5,7 +5,7 @@
 // TODO: Implemente o padrão Singleton
 // ############################################################################
 
-class ConfiguracaoSingleton {
+export class ConfiguracaoSingleton {
   // Implemente um singleton para gerenciar configurações da aplicação
   private static instance: ConfiguracaoSingleton;
   private config: Map<string, any> = new Map();
@@ -40,7 +40,7 @@ class ConfiguracaoSingleton {
 // ############################################################################
 // TODO: Implemente o padrão Factory
 // ############################################################################
-interface ProdutoFactory {
+export interface ProdutoFactory {
   criarProduto(): ProdutoFactoryInterface;
 }
 
@@ -51,7 +51,7 @@ interface ProdutoFactoryInterface {
   exibirDetalhes(): void;
 }
 
-class ProdutoEletronicoFactory implements ProdutoFactoryInterface {
+export class ProdutoEletronicoFactory implements ProdutoFactoryInterface {
   constructor(
     private nome: string,
     private preco: number
@@ -81,7 +81,7 @@ Garantia: 12 meses
   }
 }
 
-class ProdutoLivroFactory implements ProdutoFactoryInterface {
+export class ProdutoLivroFactory implements ProdutoFactoryInterface {
   constructor(
     private nome: string,
     private preco: number
@@ -111,7 +111,7 @@ Formato: Digital e Físico
   }
 }
 
-class ProdutoFactoryExercicio {
+export class ProdutoFactoryExercicio {
   // Implemente o factory method para criar diferentes tipos de produtos
   criarProduto(
     tipo: string,
@@ -136,7 +136,7 @@ interface ObserverExercicio {
   atualizar(mensagem: string): void;
 }
 
-class ClienteObserver implements ObserverExercicio {
+export class ClienteObserver implements ObserverExercicio {
   constructor(private nome: string) {}
 
   atualizar(mensagem: string): void {
@@ -144,7 +144,7 @@ class ClienteObserver implements ObserverExercicio {
   }
 }
 
-class SubjectExercicio {
+export class SubjectExercicio {
   // Implemente o processador que utilizará diferentes estratégias
   private observers: ObserverExercicio[] = [];
   private mensagens: string[] = [];
@@ -179,7 +179,7 @@ interface PagamentoStrategy {
   getDescricao(): string;
 }
 
-class PagamentoCartaoCredito implements PagamentoStrategy {
+export class PagamentoCartaoCredito implements PagamentoStrategy {
   constructor(private numeroCartao: string) {}
 
   pagar(valor: number): void {
@@ -198,7 +198,7 @@ Status: Aprovado
   }
 }
 
-class PagamentoPix implements PagamentoStrategy {
+export class PagamentoPix implements PagamentoStrategy {
   constructor(private chavePix: string) {}
 
   pagar(valor: number): void {
@@ -217,7 +217,7 @@ Status: Aprovado
   }
 }
 
-class ProcessadorPagamento {
+export class ProcessadorPagamento {
   // Implemente o processador que utilizará diferentes estratégias
   constructor(private strategy: PagamentoStrategy) {}
 

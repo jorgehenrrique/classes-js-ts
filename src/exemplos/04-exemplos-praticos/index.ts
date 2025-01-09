@@ -2,7 +2,7 @@
 // Referência: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html
 
 // Produto
-class Produto {
+export class Produto {
   constructor(
     private id: string,
     private nome: string,
@@ -33,7 +33,7 @@ class Produto {
 }
 
 // Item do Carrinho
-class ItemCarrinho {
+export class ItemCarrinho {
   constructor(
     private produto: Produto,
     private quantidade: number
@@ -53,7 +53,7 @@ class ItemCarrinho {
 }
 
 // Carrinho de Compras
-class CarrinhoCompras {
+export class CarrinhoCompras {
   private itens: ItemCarrinho[] = [];
 
   public adicionarItem(produto: Produto, quantidade: number): void {
