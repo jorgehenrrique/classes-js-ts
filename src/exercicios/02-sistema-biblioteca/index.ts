@@ -163,6 +163,53 @@ class BibliotecaExercicio {
       console.log(`- ${usuario.getNome} (ID: ${usuario.getId})`);
     });
   }
+
+  consultarLivro(isbn: string): void {
+    const livro = this.livros.get(isbn);
+    if (!livro) {
+      console.log('\nLivro não encontrado');
+      return;
+    }
+
+    console.log('\nInformações do livro:');
+    console.log(`Título: ${livro.getTitulo}`);
+    console.log(`Autor: ${livro.getAutor}`);
+    console.log(`ISBN: ${livro.getIsbn}`);
+    console.log(`Status: ${livro.getDisponivel ? 'Disponível' : 'Emprestado'}`);
+
+    if (!livro.getDisponivel) {
+      // Procura qual usuário está com o livro
+      this.usuarios.forEach((usuario) => {
+        if (usuario.getLivrosEmprestados.some((l) => l.getIsbn === isbn)) {
+          console.log(
+            `Emprestado para: ${usuario.getNome} (ID: ${usuario.getId})`
+          );
+        }
+      });
+    }
+  }
+
+  consultarUsuario(id: number): void {
+    const usuario = this.usuarios.get(id);
+    if (!usuario) {
+      console.log('\nUsuário não encontrado');
+      return;
+    }
+
+    console.log('\nInformações do usuário:');
+    console.log(`Nome: ${usuario.getNome}`);
+    console.log(`ID: ${usuario.getId}`);
+
+    const livrosEmprestados = usuario.getLivrosEmprestados;
+    if (livrosEmprestados.length > 0) {
+      console.log('Livros emprestados:');
+      livrosEmprestados.forEach((livro) => {
+        console.log(`- ${livro.getTitulo} (${livro.getAutor})`);
+      });
+    } else {
+      console.log('Nenhum livro emprestado');
+    }
+  }
 }
 
 // Função principal para testar a implementação
@@ -184,6 +231,12 @@ function executarSistemaBiblioteca() {
       ),
       new LivroBiblioteca('Harry Potter', 'J.K. Rowling', '978-8532530783'),
       new LivroBiblioteca('1984', 'George Orwell', '978-8535914849'),
+      new LivroBiblioteca(
+        'Dom Quixote',
+        'Miguel de Cervantes',
+        '978-8573264524'
+      ),
+      new LivroBiblioteca('A Metamorfose', 'Franz Kafka', '978-8535902782'),
     ];
 
     // Cadastrando livros
@@ -194,34 +247,56 @@ function executarSistemaBiblioteca() {
     const usuarios = [
       new UsuarioBiblioteca('João Silva', 1),
       new UsuarioBiblioteca('Maria Oliveira', 2),
+      new UsuarioBiblioteca('Pedro Santos', 3),
     ];
 
     // Cadastrando usuários
     console.log('\nCadastrando usuários:');
     usuarios.forEach((usuario) => biblioteca.cadastrarUsuario(usuario));
 
-    // Listando livros disponíveis
+    // Listando livros disponíveis inicialmente
     biblioteca.listarLivrosDisponiveis();
 
-    // Listando usuários
-    biblioteca.listarUsuarios();
-
-    // Testando empréstimos
-    console.log('\nTestando empréstimos:');
+    // Realizando empréstimos
+    console.log('\nRealizando empréstimos:');
     biblioteca.emprestarLivro('978-8533613379', 1); // João pega O Senhor dos Anéis
     biblioteca.emprestarLivro('978-8532530783', 2); // Maria pega Harry Potter
+    biblioteca.emprestarLivro('978-8535914849', 2); // Maria pega 1984
+    biblioteca.emprestarLivro('978-8573264524', 3); // Pedro pega Dom Quixote
 
-    // Verificando livros emprestados
-    usuarios.forEach((usuario) => usuario.listarLivrosEmprestados());
+    // Testando consultas
+    console.log('\n=== Testando Consultas ===');
 
-    // Listando livros disponíveis após empréstimos
-    biblioteca.listarLivrosDisponiveis();
+    // Consultando livro disponível
+    console.log('\nConsultando livro disponível:');
+    biblioteca.consultarLivro('978-8535902782'); // A Metamorfose (disponível)
 
-    // Testando devolução
-    console.log('\nTestando devoluções:');
-    biblioteca.devolverLivro('978-8533613379', 1); // João devolve O Senhor dos Anéis
+    // Consultando livro emprestado
+    console.log('\nConsultando livro emprestado:');
+    biblioteca.consultarLivro('978-8532530783'); // Harry Potter (com Maria)
 
-    // Verificando estado final
+    // Consultando livro inexistente
+    console.log('\nConsultando livro inexistente:');
+    biblioteca.consultarLivro('000-0000000000');
+
+    // Consultando usuários
+    console.log('\n=== Consultando Usuários ===');
+
+    // Usuário com vários livros
+    biblioteca.consultarUsuario(2); // Maria (2 livros)
+
+    // Usuário com um livro
+    biblioteca.consultarUsuario(1); // João (1 livro)
+
+    // Usuário sem livros (após devolver)
+    biblioteca.devolverLivro('978-8573264524', 3); // Pedro devolve Dom Quixote
+    biblioteca.consultarUsuario(3); // Pedro (0 livros)
+
+    // Usuário inexistente
+    biblioteca.consultarUsuario(99);
+
+    // Estado final do sistema
+    console.log('\n=== Estado Final do Sistema ===');
     biblioteca.listarLivrosDisponiveis();
     usuarios.forEach((usuario) => usuario.listarLivrosEmprestados());
   } catch (error) {
