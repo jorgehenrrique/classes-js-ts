@@ -16,11 +16,12 @@ Crie um sistema bancário simples com as seguintes funcionalidades:
 
 ```typescript
 // Implemente as classes aqui
-class ContaBancaria {
+
+class Cliente {
   // Implementar
 }
 
-class Cliente {
+class ContaBancaria {
   // Implementar
 }
 
@@ -33,7 +34,10 @@ class Banco {
 
 ```typescript
 class Cliente {
-  constructor(private nome: string, private cpf: string) {}
+  constructor(
+    private nome: string,
+    private cpf: string
+  ) {}
 
   getNome(): string {
     return this.nome;
@@ -47,7 +51,10 @@ class Cliente {
 class ContaBancaria {
   private saldo: number = 0;
 
-  constructor(private numero: string, private cliente: Cliente) {}
+  constructor(
+    private numero: string,
+    private cliente: Cliente
+  ) {}
 
   depositar(valor: number): void {
     if (valor > 0) {
