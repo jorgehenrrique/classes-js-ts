@@ -6,7 +6,12 @@ class ClienteBanco {
   // Propriedades: nome, cpf, email
   // Métodos: construtor, getters/setters necessários
 
-  // Usando: "Parameter Properties" (Propriedades de Parâmetro).
+  // Usando Parameter Properties do TypeScript:
+  // Esta sintaxe especial no construtor automaticamente:
+  // 1. Declara as propriedades da classe
+  // 2. Inicializa as propriedades
+  // 3. Atribui os valores do construtor
+  // É equivalente a declarar as propriedades fora do construtor e fazer a atribuição manual
   constructor(
     private readonly nome: string,
     private readonly cpf: string,

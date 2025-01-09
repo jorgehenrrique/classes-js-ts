@@ -26,6 +26,7 @@ Esta apostila foi criada com o objetivo de:
 2. [Recursos Avançados](exemplos/02-RecursosAvancados.md)
 
    - Modificadores de Acesso
+   - Parameter Properties (TypeScript)
    - Herança e uso do `super`
    - Encapsulamento
    - Classes Abstratas

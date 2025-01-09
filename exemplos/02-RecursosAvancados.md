@@ -19,6 +19,84 @@ Além disso, temos:
 - `readonly`: Impede que a propriedade seja modificada após sua inicialização
 - `abstract`: Define que um método deve ser implementado pelas classes filhas
 
+## Parameter Properties (TypeScript)
+
+O TypeScript oferece uma sintaxe especial no construtor chamada "Parameter Properties" que permite declarar e inicializar membros da classe em um único lugar.
+
+### JavaScript (Forma Tradicional)
+
+```javascript
+class Usuario {
+  constructor(nome, email) {
+    this.nome = nome;
+    this.email = email;
+  }
+}
+```
+
+### TypeScript (Forma Tradicional)
+
+```typescript
+class Usuario {
+  private nome: string;
+  private email: string;
+
+  constructor(nome: string, email: string) {
+    this.nome = nome;
+    this.email = email;
+  }
+}
+```
+
+### TypeScript (Parameter Properties)
+
+```typescript
+class Usuario {
+  constructor(
+    private nome: string,
+    private email: string
+  ) {}
+}
+```
+
+Os três exemplos acima fazem exatamente a mesma coisa. A versão com Parameter Properties:
+
+1. Declara as propriedades da classe
+2. Inicializa as propriedades
+3. Atribui os valores do construtor
+
+Você pode combinar com outros modificadores:
+
+```typescript
+class Produto {
+  constructor(
+    public readonly id: string, // público e imutável
+    private nome: string, // privado
+    protected preco: number, // protegido
+    public readonly tipo: string // público e imutável
+  ) {}
+}
+```
+
+### Vantagens
+
+1. Código mais conciso
+2. Menos repetição
+3. Menos chance de erros
+4. Melhor legibilidade em classes com muitas propriedades
+
+### Quando Usar
+
+- Em classes com muitas propriedades inicializadas no construtor
+- Quando as propriedades precisam de modificadores de acesso
+- Para reduzir a verbosidade do código
+
+### Quando Não Usar
+
+- Quando precisa de lógica complexa no construtor
+- Quando precisa de validações antes da atribuição
+- Quando o código precisa ser compatível com JavaScript puro
+
 ## Herança e o uso do `super`
 
 A herança permite que uma classe herde propriedades e métodos de outra classe.
