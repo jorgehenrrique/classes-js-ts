@@ -41,10 +41,6 @@ class ConfiguracaoSingleton {
 // TODO: Implemente o padrão Factory
 // ############################################################################
 interface ProdutoFactory {
-  // Defina a interface para criação de produtos
-  nome: string;
-  preco: number;
-  tipo: string;
   criarProduto(): ProdutoFactoryInterface;
 }
 
